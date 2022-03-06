@@ -14,6 +14,18 @@ public class Cart {
         return items.add(item);
     }
 
+    public boolean removeAllItems() {
+        return items.removeAll(items);
+    }
+
+    public boolean modifyItem(Product product,int amount){
+        for(Item item:items){
+            if(item.modify(product, amount))
+                return true;
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         if (items.size() ==0){

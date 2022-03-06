@@ -15,4 +15,6 @@ public interface PosDB {
 
     public Product getProduct(String productId);
 
+    public boolean addProduct(String productName,int productPrice);
+
 }

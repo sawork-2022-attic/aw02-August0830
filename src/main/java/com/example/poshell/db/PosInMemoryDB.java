@@ -44,4 +44,11 @@ public class PosInMemoryDB implements PosDB {
         this.products.add(new Product("PD2", "MacBook Pro", 29499));
     }
 
+    @Override
+    public boolean addProduct(String productName, int productPrice) {
+        int productSize = products.size()+1;
+        String productId = new String("PD"+productSize);
+        return this.products.add(new Product(productId,productName,productPrice));
+    }
+
 }
