@@ -1,5 +1,33 @@
 # POS in Shell
 
+[![asciicast](https://asciinema.org/a/474270.svg)](https://asciinema.org/a/474270)
+
+### 补充实现
+
+```
+ap：添加新的Product种类
+c：显示账单具体购买商品和总金额，结帐并清空购物车
+e：直接清空当前购物车
+m：修改选定商品数量
+s：展示当前账单
+```
+
+### 代码理解
+
+cli：负责与用户交互的部分，指令作为构件通过SprintBoot注入。
+
+biz：业务逻辑，负责实现cli中命令调用。
+
+db：数据库存储逻辑，负责业务数据的存取、管理。
+
+model：业务中用到的对象，作为Data注入，其中Item与Product利用SpringBoot架构中提供的构造方式。
+
+其中体现的分层思想：
+
+交互、业务、数据逻辑分层分离，有助于解耦，在更新实现时不至于影响其他部分。各层面对统一接口，即interface文件中定义的函数，与具体实现隔离。
+
+### 描述
+
 The demo shows a simple POS system with command line interface. 
 
 To run
